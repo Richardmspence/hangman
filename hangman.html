@@ -4,7 +4,57 @@
   <title>hangman part 1</title>
 </head>
 <body>
+  <p id = new>
+
+  80's Hangman Game
+    
+  </p>
   <script type="text/javascript">
+
+  //how to code the 80 hangman game 
+  //words. Create an array of words 
+    var list = ["hypebeast", "worldstar", "ignant", "google", "facebook"];
+
+
+    var randomWord = list[Math.floor(Math.random()*list.length)];
+    console.log(randomWord);
+
+    var display = "";
+
+    for(var i = 0; i < randomWord.length; i++){
+      
+      display = display + " _ ";
+    }
+
+
+    console.log(display);
+
+
+
+
+
+
+  
+
+
+    
+
+   
+
+
+
+  //select a word by random 
+  //present the word in underscores 
+  //allow the user to guess letters
+  //if the letter guessed is right fill in the word
+  //if wrong present the guess letters
+  //allow a number of attempts before losing 
+  //if the person guess all the letter before running out of attempts, announce as winner 
+  //refresh and run again 
+
+
+
+
     
 
     
