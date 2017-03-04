@@ -5,16 +5,16 @@
 </head>
 <body>
   <p id = new>
-
   80's Hangman Game
-    
   </p>
-  <script type="text/javascript">
+  
+  <p id = "pushedLetters">
+  </p>
 
+  <script type="text/javascript">
   //how to code the 80 hangman game 
   //words. Create an array of words 
     var list = ["hypebeast", "worldstar", "ignant", "google", "facebook"];
-
 
     var randomWord = list[Math.floor(Math.random()*list.length)];
     console.log(randomWord);
@@ -22,12 +22,38 @@
     var display = "";
 
     for(var i = 0; i < randomWord.length; i++){
-      
       display = display + " _ ";
     }
 
-
+    
     console.log(display);
+
+    document.querySelector('#new').innerHTML = display;
+
+    // write a function that loops through the word and if letter pressed matches at letter in the word the guess is guessing present that letter in the position it belongs 
+    function displayAlllettersGuessed(){
+      return "all";
+    // loop over letterPressed.. if the letter inside the word then add it to the string that is being returned 
+    }
+
+    var letterPressed = [];
+
+    //you a event listener 
+
+    document.onkeyup = function (event){
+      var key = event.key;
+      letterPressed.push(key);
+      console.log(letterPressed);
+      var displayWord = displayAlllettersGuessed();
+
+      document.querySelector("#new").innerHTML = displayWord;
+    }
+
+
+
+
+
+
 
 
 
