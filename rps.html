@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>rps</title>
+</head>
+<body>
+
+
+  <div id = results>
+  
+    <p>
+      wins:
+      <span id= "wins"></span>
+    </p>
+
+    <p>
+      ties:
+      <span id = "ties"></span>
+    </p>
+
+    <p>
+      losses:
+      <span id = "losses"></span>
+    </p>
+
+    <p>
+      letter pressed:
+      <span id="pressed"></span>
+    </p>
+
+  </div>
+
+
+  <script type="text/javascript">
+    
+
+      
+    var computerChoices = ["r", "p", "s"];
+
+    var wins = 0;
+    var losses = 0;
+    var ties = 0;
+    var pressed = [];
+
+
+    function tieUp(k, c){
+      if (k === c){
+        (console.log("its a tie"))
+        ties++;
+         document.querySelector('#ties').innerHTML = ties;
+
+      }
+    }
+
+
+
+    document.onkeyup = function (event){
+
+      var key = event.key;
+      console.log(key);
+
+      pressed.push(key);
+      
+
+      var comp = computerChoices[Math.floor(Math.random()*3)];
+      // ties
+      tieUp(key, comp);
+
+
+      // conditions for rock
+      if (key === 'r' && comp === 's'){
+        (console.log("you win"))
+         wins++;
+      }
+
+
+      if (key === 'r' && comp === 'p'){
+        (console.log("computer wins"))
+        losses++;
+      }
+
+      // conditions for paper
+      if (key === 'p' && comp === 'r'){
+        (console.log("you win"))
+        wins++;
+      }
+
+      if (key === 'p' && comp === 's'){
+        (console.log("computer wins"))
+        losses++;
+      }
+
+      // conditions for scissors 
+      if (key ==='s' && comp ==='p'){
+        (console.log('you win'))
+        wins++;
+      }
+
+      if (key ==='s' && comp ==='r'){
+        (console.log('computer wins'))
+        losses++;
+      }
+
+      document.querySelector('#wins').innerHTML = wins;
+
+      document.querySelector('#losses').innerHTML =losses;
+
+      document.querySelector('#pressed').innerHTML = pressed;
+
+
+
+
+
+
+      // document.querySelector("#welcome").innerHTML = wins, losses, ties;
+  };
+
+
+
+
+ 
+
+
+
+</script>
+
+</body>
+</html>
